@@ -215,7 +215,6 @@ func (t *P2PTunnel) connectUnderlay() (err error) {
 		t.conn, err = t.connectUnderlayTCP()
 	case LinkModeUDPPunch:
 		t.conn, err = t.connectUnderlayQuic()
-
 	}
 	if err != nil {
 		return err

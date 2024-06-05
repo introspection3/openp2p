@@ -31,7 +31,7 @@ func Run() {
 	}
 	parseParams("")
 	gLog.Println(LvINFO, "openp2p start. version: ", OpenP2PVersion)
-	gLog.Println(LvINFO, "Contact: QQ group 16947733, Email openp2p.cn@gmail.com")
+	//gLog.Println(LvINFO, "Contact: QQ group 16947733, Email openp2p.cn@gmail.com")
 
 	if gConf.daemonMode {
 		d := daemon{}
@@ -73,7 +73,7 @@ func RunAsModule(baseDir string, token string, bw int, logLevel int) *P2PNetwork
 	gLog.setLevel(LogLevel(logLevel))
 	gConf.setShareBandwidth(bw)
 	gLog.Println(LvINFO, "openp2p start. version: ", OpenP2PVersion)
-	gLog.Println(LvINFO, "Contact: QQ group 16947733, Email openp2p.cn@gmail.com")
+	//gLog.Println(LvINFO, "Contact: QQ group 16947733, Email openp2p.cn@gmail.com")
 	gLog.Println(LvINFO, &gConf)
 
 	network = P2PNetworkInstance(&gConf.Network)

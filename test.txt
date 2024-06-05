@@ -1,0 +1,1 @@
+./openp2p -node YOUR-PC1 -serverhost openp2p.cn -token 8620985343020536194

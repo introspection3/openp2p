@@ -511,7 +511,7 @@ func (pn *P2PNetwork) init() error {
 		caCertPool.AppendCertsFromPEM([]byte(ISRGRootX1))
 		config := tls.Config{
 			RootCAs:            caCertPool,
-			InsecureSkipVerify: false} // let's encrypt root cert "DST Root CA X3" expired at 2021/09/29. many old system(windows server 2008 etc) will not trust our cert
+			InsecureSkipVerify: true} // let's encrypt root cert "DST Root CA X3" expired at 2021/09/29. many old system(windows server 2008 etc) will not trust our cert
 		websocket.DefaultDialer.TLSClientConfig = &config
 		websocket.DefaultDialer.HandshakeTimeout = ClientAPITimeout
 		u := url.URL{Scheme: "wss", Host: gatewayURL, Path: uri}

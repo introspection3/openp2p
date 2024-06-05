@@ -20,7 +20,7 @@ import (
 var quicVersion []quic.VersionNumber
 
 type underlayQUIC struct {
-	listener quic.Listener
+	listener *quic.Listener
 	writeMtx *sync.Mutex
 	quic.Stream
 	quic.Connection
@@ -94,8 +94,8 @@ func dialQuic(conn *net.UDPConn, remoteAddr *net.UDPAddr, idleTimeout time.Durat
 		InsecureSkipVerify: true,
 		NextProtos:         []string{"openp2pv1"},
 	}
-	Connection, err := quic.DialContext(context.Background(), conn, remoteAddr, conn.LocalAddr().String(), tlsConf,
-		&quic.Config{Versions: quicVersion, MaxIdleTimeout: idleTimeout, DisablePathMTUDiscovery: true})
+	var cfg = &quic.Config{Versions: quicVersion, MaxIdleTimeout: idleTimeout, DisablePathMTUDiscovery: true}
+	Connection, err := quic.Dial(context.Background(), conn, remoteAddr, tlsConf, cfg)
 	if err != nil {
 		return nil, fmt.Errorf("quic.DialContext error:%s", err)
 	}

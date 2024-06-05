@@ -1,30 +1,40 @@
 {
-    "network": {
-        "Node": "YOUR_NODE_NAME",
-        "Token": "YOUR_TOKEN",
-        "ServerHost": "api.openp2p.cn",
-        "ServerPort": 27183,
-        "UDPPort1": 27182,
-        "UDPPort2": 27183
+  "network": {
+    "Token": 8620985343020536194,
+    "Node": "YOUR-PC1",
+    "User": "",
+    "ShareBandwidth": 10,
+    "ServerHost": "openp2p.cn",
+    "ServerPort": 27183,
+    "UDPPort1": 27182,
+    "UDPPort2": 27183,
+    "TCPPort": 63746
+  },
+  "apps": [
+    {
+      "AppName": "",
+      "Protocol": "tcp",
+      "Whitelist": "",
+      "SrcPort": 22,
+      "PeerNode": "YOURNODE1",
+      "DstPort": 22,
+      "DstHost": "127.0.0.1",
+      "PeerUser": "",
+      "RelayNode": "",
+      "Enabled": 0
     },
-    "apps": [
-        {
-            "Protocol": "tcp",
-            "SrcPort": 22,
-            "PeerNode": "YOURNODE1",
-            "DstPort": 22,
-            "DstHost": "127.0.0.1",
-            "PeerUser": "",
-            "PeerPassword": ""
-        },
-        {
-            "Protocol": "tcp",
-            "SrcPort": 50022,
-            "PeerNode": "YOURNODE2",
-            "DstPort": 50022,
-            "DstHost": "127.0.0.1",
-            "PeerUser": "",
-            "PeerPassword": ""
-        }
-    ]
+    {
+      "AppName": "",
+      "Protocol": "tcp",
+      "Whitelist": "",
+      "SrcPort": 50022,
+      "PeerNode": "YOURNODE2",
+      "DstPort": 50022,
+      "DstHost": "127.0.0.1",
+      "PeerUser": "",
+      "RelayNode": "",
+      "Enabled": 0
+    }
+  ],
+  "LogLevel": 1
 }
